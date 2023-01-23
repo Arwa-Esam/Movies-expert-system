@@ -49,27 +49,16 @@ and a variable that 'd refer to the name of the movie, and the BODY will contain
 		 Duration=<90, Duration>60
 ----
 
-
-Second: There is find_movie rule with arity=8 that contains 
-(Name , Year , Type , Rate , Country , Language , Duration , Age) .
- , and the BODY will contain the movie clause that focuses on all
- except duration, and rating condition that gets you the rating you asked
- for or above, and duration with arity=2 contains two variables the get the
- duration and the name.
-FOR EXAMPLE:
+ - Second: There is find_movie rule with arity=8 that contains (Name , Year , Type , Rate , Country , Language , Duration , Age) .
+ , and the BODY will contain the movie clause that focuses on all except duration, and rating condition that gets you the rating you asked for or above, and duration with arity=2 contains two variables the get the duration and the name.
+ - FOR EXAMPLE:
  find_movie(Name, Year, Type, Rating, Country, Language, Duration, Age) 
 		movie(Name, Year, Type, Rating1, Country, Language, _, Age),
 		Rating1 >= Rating  duration(Duration, Name).
-![image](https://user-images.githubusercontent.com/46052811/214042656-3da81063-fc7b-4ff6-b966-c150ae8ace90.png)
-
-
-Third: There is same rule with arity=2 that contains two variables that get 2 
-names of 2 similar movies, and BODY contains 2 complex terms movie 
-with arity=8 focuses on the Name(different) , Type , Age , and condition
- that the 2 names must be different.
-FOR EXAMPLE: 
+----
+ - Third: There is same rule with arity=2 that contains two variables that get 2 names of 2 similar movies, and BODY contains 2 complex terms movie with arity=8 focuses on the Name(different) , Type , Age , and condition that the 2 names must be different.
+ - FOR EXAMPLE: 
 same(Movie, SameMovie) :- movie(Movie, _, Type, _, _, _, _, Age)
  			  movie(SameMovie, _, Type, _, _, _, _, Age),
                          . Movie \= SameMovie
-![image](https://user-images.githubusercontent.com/46052811/214042695-6ef46de8-ac3a-470a-bed3-bae418c6daa7.png)
 
