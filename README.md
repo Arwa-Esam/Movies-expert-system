@@ -4,16 +4,16 @@
 ### Home Form
 
 ![fmain](https://user-images.githubusercontent.com/46052811/214041234-a2f3e6e7-e57b-4393-b8aa-326243429896.png)
- - - In this form you find two buttons (search) and (similar movies). 
- - - The search button opens a form that you can search for the movie you want to watch in.
- - - The similar movies button opens a form to search for similar movies to the movie you want.
+ - In this form you find two buttons (search) and (similar movies). 
+ - The search button opens a form that you can search for the movie you want to watch in.
+ - The similar movies button opens a form to search for similar movies to the movie you want.
 
 ------------------------------------------
 ### Search Form
 
 ![fsearch](https://user-images.githubusercontent.com/46052811/214041313-d3fe4691-d229-46a5-b229-74cd1818ed26.png)
- - - In this form you'll find checkboxes that contains the types(action,adventure,animation,family, fantasy,war,thriller,comedy,crime,drama,history, music,horror,mystery,romance) for the movies and you can check the type you want to watch.
- - - You'll also find comboboxes that have options for the movie features(rating,year,duration,Language,country,age).
+  - In this form you'll find checkboxes that contains the types(action,adventure,animation,family, fantasy,war,thriller,comedy,crime,drama,history, music,horror,mystery,romance) for the movies and you can check the type you want to watch.
+  - You'll also find comboboxes that have options for the movie features(rating,year,duration,Language,country,age).
  - - In the end a list that shows the movies depends on the options you Checked after you click on submit button, and you can get information about the film by checking it from the list ,it will show up in a new form.
 
 ------------------------------------------
