@@ -1,5 +1,5 @@
 # Movies-expert-system using Prolog
-## You can rub project using Swi or Netbeans
+## You can run project using Swi or Netbeans
 
 ### Home Form
 
@@ -14,49 +14,40 @@
 ![fsearch](https://user-images.githubusercontent.com/46052811/214041313-d3fe4691-d229-46a5-b229-74cd1818ed26.png)
   - In this form you'll find checkboxes that contains the types(action,adventure,animation,family, fantasy,war,thriller,comedy,crime,drama,history, music,horror,mystery,romance) for the movies and you can check the type you want to watch.
   - You'll also find comboboxes that have options for the movie features(rating,year,duration,Language,country,age).
- - - In the end a list that shows the movies depends on the options you Checked after you click on submit button, and you can get information about the film by checking it from the list ,it will show up in a new form.
+  - In the end a list that shows the movies depends on the options you Checked after you click on submit button, and you can get information about the film by checking it from the list ,it will show up in a new form.
 
 ------------------------------------------
 ### Similar movies Form
 
 ![fsimilar](https://user-images.githubusercontent.com/46052811/214041385-b987d345-1373-488e-9dfb-aca25be7c35e.png)
-  - - In this form you enter the name of the movie that you want to find movies like in a textfield and then you click 
+  - In this form you enter the name of the movie that you want to find movies like in a textfield and then you click 
 Recommend button ,then the movies 'll show up in the list.
 
 ------------------------------------------
 ### Information Form
 
 ![fdisplay](https://user-images.githubusercontent.com/46052811/214041407-85526c12-626d-4e8b-b4d1-03a107f32548.png)
-  - - When we want to know information About any film just click on the name of this film and this form will be 
+  - When we want to know information About any film just click on the name of this film and this form will be 
 opened, Which include all information about this film 
 
 ------------------------------
 ### Clauses explanation
- - - First we inserted the facts with FUNCTOR (movie) and arity=8, 
-that contains (name(atom) , year(numeral) ,
- type(list of pattern of 0's and 1's) , rate(numeral) , country(atom) ,
- language(atom) , duration(numeral) , age(atom)).
-FOR EXAMPLE: 
-movie('Scarface', 1983, [1,0,0,0,1,1,0,0,0,0,0,0,0,0,0], 8.3, 'America', 
-'English', 170, 'NR').
+ - First we inserted the facts with FUNCTOR (movie) and arity=8, that contains (name(atom) , year(numeral) , type(list of pattern of 0's and 1's) , rate(numeral) , country(atom) , language(atom) , duration(numeral) , age(atom)).
+ - FOR EXAMPLE: 
+movie('Scarface', 1983, [1,0,0,0,1,1,0,0,0,0,0,0,0,0,0], 8.3, 'America', 'English', 170, 'NR').
 
 
- Notice that types are ordered. 
-(Action,Adventure,Animation,Comedy,Crime,Drama,Family,Fantasy,
-History,Horror,Music,Mystery,Romance,Thriller,War).
-![image](https://user-images.githubusercontent.com/46052811/214042589-61807058-e6b3-40d8-af36-43c350531a22.png)
+ **Notice that types are ordered. 
+(Action,Adventure,Animation,Comedy,Crime,Drama,Family,Fantasy,History,Horror,Music,Mystery,Romance,Thriller,War).
 
-Then we see the rules:
-First: we find duration rule with arity=2 that contains atom that'd refer to
- the duration whether it's (short(0->60 mins),mid(60->90),long(above 90)),
-and a variable that 'd refer to the name of the movie, and the BODY 
-will contain the movie clause that focuses on the name and duration only,
- and the condition of the duration.
-FOR EXAMPLE:
- duration(mid, Movie) :- movie(Movie, _, _, _, _, _, Duration, _)
-  . Duration=<90, Duration>60
-![image](https://user-images.githubusercontent.com/46052811/214042636-91ba695f-a453-4c05-aed6-e9416d2c878c.png)
-
+----
+ - Then we see the rules:
+	- First: we find duration rule with arity=2 that contains atom that'd refer to the duration whether it's (short(0->60 mins),mid(60->90),long(above 90)),
+and a variable that 'd refer to the name of the movie, and the BODY will contain the movie clause that focuses on the name and duration only, and the condition of the duration.
+	- FOR EXAMPLE:
+		 duration(mid, Movie) :- movie(Movie, _, _, _, _, _, Duration, _).
+		 Duration=<90, Duration>60
+----
 
 
 Second: There is find_movie rule with arity=8 that contains 
