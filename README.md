@@ -58,7 +58,7 @@ and a variable that 'd refer to the name of the movie, and the BODY will contain
 ----
  - Third: There is same rule with arity=2 that contains two variables that get 2 names of 2 similar movies, and BODY contains 2 complex terms movie with arity=8 focuses on the Name(different) , Type , Age , and condition that the 2 names must be different.
  - FOR EXAMPLE: 
-same(Movie, SameMovie) :- - - movie(Movie, _, Type, _, _, _, _, Age)
- 			 - - movie(SameMovie, _, Type, _, _, _, _, Age),
-                         - - Movie \= SameMovie
+same(Movie, SameMovie) :- movie(Movie, _, Type, _, _, _, _, Age)
+ 			  movie(SameMovie, _, Type, _, _, _, _, Age),
+                          Movie \= SameMovie
 
